@@ -32,7 +32,9 @@ double Triangle::getSurface() {
     double side1 = sqrt(pow(a.getX() - b.getX(), 2) + pow(a.getY() - b.getY(), 2));
     double side2 = sqrt(pow(a.getX() - c.getX(), 2) + pow(a.getY() - c.getY(), 2));
     double side3 = sqrt(pow(b.getX() - c.getX(), 2) + pow(b.getY() - c.getY(), 2));
-    return sqrt((side1 + side2 + side3)*(side1 + side2 - side3)*(side1 - side2 + side3)*(-side1 + side2 + side3))/ 4;
+    double p = (side1 + side2 + side3) / 2;
+
+    return sqrt(p * (p - side1) * (p - side2) * (p - side3));
 }
 
 std::string Triangle::toString() {

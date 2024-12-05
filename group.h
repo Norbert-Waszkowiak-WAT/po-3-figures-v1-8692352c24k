@@ -1,7 +1,6 @@
 #ifndef GROUP_H
 #define GROUP_H
 #include <iostream>
-#include <string>
 #include <vector>
 #include "line.h"
 #include "triangle.h"
@@ -35,7 +34,9 @@ public:
 
     void flip();
 
-    
+    void move(double x, double y);
+
+    std::string toString();
 };
 
 #endif
